@@ -1,5 +1,8 @@
 <?php
+    session_start();
+    include 'authenticator-checker.php';
     include 'database/mysqli.php';
+    include 'database/queries.php';
     include 'settings.php';
     include 'language/bg.php';
 ?>
@@ -172,10 +175,8 @@
                                 <div class="customize-input">
                                     <select
                                         class="custom-select form-control bg-white custom-radius custom-shadow border-0">
-                                        <option selected>BG</option>
-                                        <option value="1">AB</option>
-                                        <option value="2">AK</option>
-                                        <option value="3">BE</option>
+                                        <option selected>Български</option>
+                                        
                                     </select>
                                 </div>
                             </a>
@@ -193,7 +194,7 @@
                                 <form>
                                     <div class="customize-input">
                                         <input class="form-control custom-shadow custom-radius border-0 bg-white"
-                                            type="search" placeholder="Search" aria-label="Search">
+                                            type="search" placeholder="<?=$lang['search'];?>" aria-label="Search">
                                         <i class="form-control-icon" data-feather="search"></i>
                                     </div>
                                 </form>
@@ -207,8 +208,8 @@
                                 aria-haspopup="true" aria-expanded="false">
                                 <img src="../assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle"
                                     width="40">
-                                <span class="ml-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                                        class="text-dark">Jason Doe</span> <i data-feather="chevron-down"
+                                <span class="ml-2 d-none d-lg-inline-block"><span><?=$lang['hello'];?>,</span> <span
+                                        class="text-dark"><?=$viewUser['user_firstname'];?> <?=$viewUser['user_lastname'];?></span> <i data-feather="chevron-down"
                                         class="svg-icon"></i></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -222,16 +223,14 @@
                                         class="svg-icon mr-2 ml-1"></i>
                                     Inbox</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"
+                                <a class="dropdown-item" href="change-password"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
-                                    Account Setting</a>
+                                    <?=$lang['change_password'];?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
+                                <a class="dropdown-item" href="sign-out"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
-                                    Logout</a>
-                                <div class="dropdown-divider"></div>
-                                <div class="pl-4 p-3"><a href="javascript:void(0)" class="btn btn-sm btn-info">View
-                                        Profile</a></div>
+                                    <?=$lang['logout'];?></a>
+                               
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -253,7 +252,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index.html"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu"><?=$lang['homepage'];?></span></a></li>
                         <li class="list-divider"></li>

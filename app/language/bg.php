@@ -25,4 +25,11 @@
     $lang['pos_couriers_econt'] = 'Еконт Експрес';
     $lang['pos_couriers_speedy'] = 'Спиди';
     $lang['login_heading_text'] = 'Вход';
+    $lang['login_email_address'] = 'E-mail адрес';
+    $lang['login_password'] = 'Парола';
+    $lang['logout'] = 'Изход';
+    $lang['search'] = 'Търсене...';
+    $lang['hello'] = 'Здравей';
+    $lang['change_password'] = 'Смяна на парола';
+    $lang['all_fields_required'] = 'Всички полета, отбелязани с <code>*</code> са задължителни за попълване';
 ?>

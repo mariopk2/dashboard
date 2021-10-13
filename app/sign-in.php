@@ -40,28 +40,35 @@
                             <img src="../assets/images/logo.png" alt="wrapkit" class="img-fluid">
                         </div>
                         <h2 class="mt-3 text-center"><?=$lang['login_heading_text'];?></h2>
-                        <form class="mt-4">
+                        <?php
+                            if($_GET['message'] == 'error'){
+                                echo '<p class="text-center">Невалиден e-mail адрес или парола!</p>';
+                            }
+                        ?>
+                        <form class="mt-4" method="POST" action="sign-functions">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="uname">Username</label>
-                                        <input class="form-control" id="uname" type="text"
-                                            placeholder="enter your username">
+                                        <label class="text-dark" for="uname"><?=$lang['login_email_address'];?></label>
+                                        <input class="form-control" id="uname" name="email_address" type="text"
+                                            placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label class="text-dark" for="pwd">Password</label>
-                                        <input class="form-control" id="pwd" type="password"
-                                            placeholder="enter your password">
+                                        <label class="text-dark" for="pwd"><?=$lang['login_password'];?></label>
+                                        <input class="form-control" id="pwd" name="password" type="password"
+                                            placeholder="*********">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 text-center">
-                                    <button type="submit" class="btn btn-block btn-dark">Sign In</button>
+                                    <input type="submit" name="login" value="<?=$lang['login_heading_text'];?>" class="btn btn-block btn-dark">
+                                   
                                 </div>
-                                <div class="col-lg-12 text-center mt-5">
+                                <div></div>
+                                <!--<div class="col-lg-12 text-center mt-5">
                                     Don't have an account? <a href="#" class="text-danger">Sign Up</a>
-                                </div>
+                                </div>-->
                             </div>
                         </form>
                     </div>
