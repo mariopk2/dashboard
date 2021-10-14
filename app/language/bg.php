@@ -32,4 +32,26 @@
     $lang['hello'] = 'Здравей';
     $lang['change_password'] = 'Смяна на парола';
     $lang['all_fields_required'] = 'Всички полета, отбелязани с <code>*</code> са задължителни за попълване';
+    $lang['change_password_current_password'] = 'Текуща парола';
+    $lang['change_password_new_password'] = 'Нова парола';
+    $lang['change_password_repea_new_password'] = 'Повтори новата парола';
+    $lang['submit'] = 'Запис';
+    $lang['form_add_client'] = 'Добавяне на клиент';
+    $lang['add'] = 'Добави';
+    $lang['import'] = 'Импортиране';
+    $lang['add_client_name'] = 'Наименование';
+    $lang['add_client_address'] = 'Адрес';
+    $lang['add_client_eik'] = 'ЕИК/Булстат';
+    $lang['add_client_dds'] = 'Идент.№ по ДДС';
+    $lang['add_client_mol'] = 'МОЛ';
+    $lang['add_client_account_manager'] = 'Акаунт мениджър';
+    $lang['close'] = 'Отказ';
+    $lang['please_Select_'] = '-- моля изберете --';
+    $lang['notification_add_client'] = 'Успешно създаване на клиент';
+    $lang['notification_remove_client'] = 'Успешно изтриване на клиент';
+    $lang['view_client'] = 'Преглед на клиент';
+    $lang['edit_client'] = 'Редакция на клиент';
+    $lang['delete'] = 'Изтриване';
+    $lang['delete_confirm_javascript'] = 'Наистина ли желаете да изтриете този запис?';
+    $lang['viewclient_view'] = 'Преглед на клиент';
 ?>

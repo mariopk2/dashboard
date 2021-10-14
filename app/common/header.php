@@ -15,12 +15,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?=$software['software_url'];?>assets/images/favicon.png">
     <title><?=$software['software_name'];?> : <?=$software['software_company'];?></title>
-    <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="../assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <link href="<?=$software['software_url'];?>assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link href="<?=$software['software_url'];?>assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="<?=$software['software_url'];?>assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="<?=$software['software_url'];?>dist/css/style.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7dc0dd0e39.js" crossorigin="anonymous"></script>
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -43,20 +44,20 @@
                             class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="index.html">
+                        <a href="<?=$software['software_url_menu'];?>index">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
-                                <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="<?=$software['software_url'];?>assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="<?=$software['software_url'];?>assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
-                                <img src="../assets/images/text_logo.png" alt="homepage" class="dark-logo" />
+                                <img src="<?=$software['software_url'];?>assets/images/text_logo.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo text -->
-                                <img src="../assets/images/text_logo.png" class="light-logo" alt="homepage" />
+                                <img src="<?=$software['software_url'];?>assets/images/text_logo.png" class="light-logo" alt="homepage" />
                             </span>
                         </a>
                     </div>
@@ -223,11 +224,11 @@
                                         class="svg-icon mr-2 ml-1"></i>
                                     Inbox</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="change-password"><i data-feather="settings"
+                                <a class="dropdown-item" href="<?=$software['software_url_menu'];?>change-password"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
                                     <?=$lang['change_password'];?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="sign-out"><i data-feather="power"
+                                <a class="dropdown-item" href="<?=$software['software_url_menu'];?>sign-out"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
                                     <?=$lang['logout'];?></a>
                                
@@ -252,13 +253,13 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="index"
+                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="<?=$software['software_url_menu'];?>index"
                                 aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
                                     class="hide-menu"><?=$lang['homepage'];?></span></a></li>
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu"><?=$lang['client_heading'];?></span></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href="ticket-list.html"
+                        <li class="sidebar-item"> <a class="sidebar-link" href="<?=$software['software_url_menu'];?>clients"
                                 aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
                                     class="hide-menu"><?=$lang['clients_menu'];?>
                                 </span></a>

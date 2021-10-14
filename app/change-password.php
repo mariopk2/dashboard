@@ -1,5 +1,24 @@
 <?php
     include 'common/header.php';
+    if($_POST['change_password']){
+        $current_password = hash('sha256', $_POST['current_password']);
+        $new_password = $_POST['new_password'];
+        $cnew__password = $_POST['cnew__password'];
+        $newPasswordHash = hash('sha256', $new_password);
+        $SelectCurrentPassword = mysqli_query($mysqli,"SELECT * FROM users WHERE user_password = '".$current_password."'");
+        $viewCurrentPassword = mysqli_num_rows($SelectCurrentPassword);
+        if($viewCurrentPassword > 0){
+            if($new_password != $cnew__password){
+                echo "<script>alert('Паролите не съвпадат!');</script>";
+            }else{
+                mysqli_query($mysqli,"UPDATE users SET user_password = '".$newPasswordHash."' WHERE user_id = ".$_SESSION['user_id']."");
+                echo "<script>alert('Успешна промяна на парола!');</script>";
+                echo '<script>window.location.href = "sign-out";</script>';
+            }
+        }else{
+            echo "<script>alert('Текущата парола е грешна!');</script>";
+        }
+    }
 ?>
   <div class="page-wrapper">
             <!-- ============================================================== -->
@@ -38,43 +57,26 @@
                                 <h6 class="card-subtitle"><?=$lang['all_fields_required'];?></h6>
                                 <form class="mt-4">
                                     <div class="form-group">
-                                        <input type="text" class="form-control">
+                                        <label><?=$lang['change_password_current_password'];?></label>
+                                        <input type="text" class="form-control" name="current_password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label><?=$lang['change_password_new_password'];?></label>
+                                        <input type="text" class="form-control" name="new_password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label><?=$lang['change_password_repea_new_password'];?></label>
+                                        <input type="text" class="form-control" name="cnew__password">
+                                    </div>
+                                    <div class="form-group">
+                                       <input type="submit" name="change_password" value="<?=$lang['submit'];?>" class="btn btn-block btn-xs btn-info">
                                     </div>
                                 </form>
                             </div>
                         </div>
-                    </div>
-                   
-                    
-                    
-                   
-                  
-                    
+                    </div> 
                 </div>
-               
-                
-               
-                
-                
-                
-               
-                
-                
-               
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                All Rights Reserved by Adminmart. Designed and Developed by <a
-                    href="https://wrappixel.com">WrapPixel</a>.
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
         </div>
 <?php
     include 'common/footer.php';
