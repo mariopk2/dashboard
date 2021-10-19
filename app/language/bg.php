@@ -54,4 +54,6 @@
     $lang['delete'] = 'Изтриване';
     $lang['delete_confirm_javascript'] = 'Наистина ли желаете да изтриете този запис?';
     $lang['viewclient_view'] = 'Преглед на клиент';
+    $lang['viewclient_edit'] = 'Редакция на клиент';
+    $lang['notification_edit_client'] = 'Успешна редакция на клиент';
 ?>

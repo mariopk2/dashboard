@@ -19,6 +19,7 @@
     <title><?=$software['software_name'];?> : <?=$software['software_company'];?></title>
     <link href="<?=$software['software_url'];?>assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="<?=$software['software_url'];?>assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css" rel="stylesheet">
     <link href="<?=$software['software_url'];?>assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="<?=$software['software_url'];?>dist/css/style.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7dc0dd0e39.js" crossorigin="anonymous"></script>
@@ -267,9 +268,7 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-chat.html"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span
                                     class="hide-menu"><?=$lang['clients_leads'];?></span></a></li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-calendar.html"
-                                aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
-                                    class="hide-menu"><?=$lang['clients_categories'];?></span></a></li>
+                        
 
                         <li class="list-divider"></li>
                         <li class="nav-small-cap"><span class="hide-menu"><?=$lang['finances_menu'];?></span></li>

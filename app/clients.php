@@ -17,7 +17,9 @@
         echo '<script>window.location.href = "clients";</script>';
     }
 ?>
+<style>.modal{font-size : 13px;}.modal-footer{margin-top : -20px;}</style>
   <!-- Page wrapper  -->
+  
         <!-- ============================================================== -->
         <div class="page-wrapper">
             <!-- ============================================================== -->
@@ -44,8 +46,8 @@
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" data-backdrop="static"
-                aria-labelledby="scrollableModalTitle" aria-hidden="true">
+            <div class="modal fade1" id="scrollable-modal" tabindex="-1" role="dialog" data-backdrop="static"
+                aria-labelledby="scrollableModalTitle" aria-hidden="false">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -98,24 +100,24 @@
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
             <div class="container-fluid">
-                        
+                       <style>#zero_config{font-size : 13px;}</style>
+                       
                 <div class="row">
                     <div class="col-12" >
                         <div class="card">
                             <div class="card-body" style="overflow-x: hidden;">
                                 <h4 class="card-title"><?=$lang['clients_menu'];?></h4>
-                                <div class="table-responsive" style="max-width : 100%;overflow-x: hidden;">
-                                    <table id="multi_col_order"
-                                        class="table table-striped table-bordered display no-wrap" style="max-width : 100%;">
+                                <div class="table-responsive" >
+                                    <table id="zero_config" class="table table-striped table-bordered " width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Id</th>
+                                                
                                                 <th><?=$lang['add_client_name'];?></th>
                                                 <th><?=$lang['add_client_eik'];?></th>
-                                                <th><?=$lang['add_client_address'];?></th>
-                                                <th><?=$lang['add_client_mol'];?></th>
+                                                <th width="15%"><?=$lang['add_client_address'];?></th>
+                                                <th width="15%"> <?=$lang['add_client_mol'];?></th>
                                                 <th><?=$lang['add_client_account_manager'];?></th>
-                                                <th></th>
+                                                <th width="14%"></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -123,21 +125,21 @@
                                                 while($viewClients = mysqli_Fetch_array($SelectClients)){
                                             ?>
                                             <tr>
-                                                <td><?=$viewClients['client_id'];?></td>
-                                                <td><a href="clients/<?=$viewClients['client_id'];?>/" data-toggle="tooltip" data-placement="top" title="<?=$lang['view_client'];?>"><?=$viewClients['client_name'];?></a></td>
+                                               
+                                                <td><a href="clients/view/<?=$viewClients['client_id'];?>/" data-toggle="tooltip" data-placement="top" title="<?=$lang['view_client'];?>"><?=$viewClients['client_name'];?></a></td>
                                                 <td><?=$viewClients['client_eik'];?></td>
                                                 <td><?=$viewClients['client_address'];?></td>
                                                 <td><?=$viewClients['client_mol'];?></td>
                                                 <td><?=$viewClients['user_firstname'];?> <?=$viewClients['user_lastname'];?></td>
                                                 <td>
-                                                    <a href="clients/<?=$viewClients['client_id'];?>/" data-toggle="tooltip" data-placement="top" title="<?=$lang['view_client'];?>">
+                                                    <a href="clients/view/<?=$viewClients['client_id'];?>/" data-toggle="tooltip" data-placement="top" title="<?=$lang['view_client'];?>">
                                                         <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                                     </a>
-                                                    <a href="clientEdit?id=<?=$viewClients['client_id'];?>" data-toggle="tooltip" data-placement="top" title="<?=$lang['edit_client'];?>">
+                                                    <a href="clients/edit/<?=$viewClients['client_id'];?>/" data-toggle="tooltip" data-placement="top" title="<?=$lang['edit_client'];?>">
                                                         <button type="button" class="btn btn-sm btn-success"><i class="fa fa-bars"></i></button>
                                                     </a>
-                                                    <a href="clients?action=delete&id=<?=$viewClients['client_id'];?>" onclick="return confirm('<?=$lang['delete_confirm_javascript'];?>');" data-toggle="tooltip" data-placement="top" title="<?=$lang['delete'];?>">
-                                                        <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                                    <a href="clients?action=delete&id=<?=$viewClients['client_id'];?>"  data-toggle="tooltip" data-placement="top" title="<?=$lang['delete'];?>">
+                                                        <button type="button" class="btn btn-sm btn-danger"  ><i class="fa fa-trash"></i></button>
                                                     </a>
                                                 </td>
                                             </tr>

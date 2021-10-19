@@ -3,4 +3,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 
-RewriteRule ^clients/([0-9]+)/ clientView.php?id=$1
+RewriteRule ^clients/view/([0-9]+)/ clientView.php?id=$1
+RewriteRule ^clients/edit/([0-9]+)/ clientEdit.php?id=$1

@@ -1,21 +1,5 @@
 <?php
     include 'common/header.php';
-    if($_POST['add_client']){
-        $client_name = $_POST['client_name'];
-        $client_address = $_POST['client_address'];
-        $client_eik = $_POST['client_eik'];
-        $client_vat = $_POST['client_vat'];
-        $client_mol = $_POST['client_mol'];
-        $client_account_manager = $_POST['client_account_manager'];
-        mysqli_query($mysqli,"INSERT INTO clients(`client_name`,`client_address`,`client_eik`,`client_vat`,`client_mol`,`client_account_manager`)VALUES('$client_name','$client_address','$client_eik','$client_vat','$client_mol','$client_account_manager')");
-        echo '<script>'.$lang["notification_add_client"].'!</script>';
-        echo '<script>window.location.href = "clients";</script>';
-    }
-    if($_GET['action'] == 'delete'){
-        mysqli_query($mysqli,"UPDATE `clients` SET client_deleted = '1' WHERE client_id = ".$_GET['id']."");
-        echo '<script>'.$lang["notification_remove_client"].'!</script>';
-        echo '<script>window.location.href = "clients";</script>';
-    }
 ?>
   <!-- Page wrapper  -->
         <!-- ============================================================== -->
@@ -108,25 +92,97 @@
                                     <li class="nav-item">
                                         <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
                                             <i class="mdi mdi-settings-outline d-lg-none d-block mr-1"></i>
-                                            <span class="d-none d-lg-block">Рззходи</span>
+                                            <span class="d-none d-lg-block">Разходи</span>
                                         </a>
                                     </li>
                                 </ul>
 
                                 <div class="tab-content">
-                                    <div class="tab-pane" id="home">
-                                        <p>Food truck quinoa dolor sit amet, consectetuer adipiscing elit. Aenean
-                                            commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
-                                            magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                                            ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-                                            quis enim.</p>
-                                        <p class="mb-0">Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
-                                            arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
-                                            dictum felis eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus
-                                            elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-                                            porttitor eu, consequat vitae, eleifend ac, enim.</p>
+                                    <div class="tab-pane active" id="home">
+                                    <div class="grid-structure">
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="grid-container font-weight-bold">
+                                                Наименование на фирма
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="grid-container">
+                                                <?=$viewClientSelectArray['client_name'];?>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="tab-pane show active" id="profile">
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="grid-container font-weight-bold">
+                                                ЕИК/Булстат
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="grid-container">
+                                                <?=$viewClientSelectArray['client_eik'];?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="grid-container font-weight-bold">
+                                                Идент № по ДДС
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="grid-container">
+                                                <?=$viewClientSelectArray['client_vat'];?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="grid-container font-weight-bold">
+                                                Адрес на регистрация
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="grid-container">
+                                                <?=$viewClientSelectArray['client_address'];?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="grid-container font-weight-bold">
+                                                МОЛ
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="grid-container">
+                                                <?=$viewClientSelectArray['client_mol'];?>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="grid-container font-weight-bold">
+                                                Акаунт мениджър
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8">
+                                            <div class="grid-container">
+                                                <?=$viewClientSelectArray['user_firstname'];?> <?=$viewClientSelectArray['user_lastname'];?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                    </div>
+                                    <div class="tab-pane show" id="profile">
                                         <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
                                             justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis
                                             eu pede mollis pretium. Integer tincidunt.Cras dapibus. Vivamus elementum
